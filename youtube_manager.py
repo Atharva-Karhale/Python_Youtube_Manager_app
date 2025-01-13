@@ -13,8 +13,10 @@ def save_data_helper(videos):
         json.dump(videos,file)
 
 def list_all(videos):
+    print( "-." * 40)
     for index, vid in enumerate (videos, start=1):
         print(f"{index}. {vid['name']} | Duration: {vid['time']}")
+    print( "-." * 40)
 
 def add_video(videos):
     name = input("Enter Video Name: ")
