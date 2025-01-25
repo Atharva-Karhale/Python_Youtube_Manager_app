@@ -48,6 +48,7 @@ def delete_video(videos):
 def main():
     videos = load_data()
     while True:
+
         print("\n Youtube Manger | Choose an Option")
         print("1. List all youtube videos ")
         print("2. Add a youtube video ")
@@ -76,5 +77,6 @@ def main():
             case _:
                 print("Invalid Choice | Try Again")
                 
+            
 if __name__ == "__main__":
     main()
