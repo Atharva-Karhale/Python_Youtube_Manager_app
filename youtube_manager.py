@@ -24,6 +24,27 @@ def add_video(videos):
     videos.append({"name" : name, "time" : time})
     save_data_helper(videos)
 
+def update_details(videos):
+    list_all(videos)
+    index = int(input("Which Entry would you like to update?"))
+
+    if 1<= index <= len(videos):
+
+        name = input("Enter updated name")
+        duration = input("Enter updated duration")
+
+        videos[index-1] = {"name": name, "time": duration}
+
+        save_data_helper(videos)
+
+def delete_video(videos):
+    list_all(videos)
+    index = int(input("Which Entry would you like to update?"))
+
+    if 1<= index <=len(videos):
+        del videos[index-1]
+        save_data_helper(videos)
+
 def main():
     videos = load_data()
     while True:
@@ -39,18 +60,19 @@ def main():
         match choice:
             case "1":
                 list_all(videos)
+
             case "2":
                 add_video(videos)
+
             case "3":
-                print("fuck off dude")
-                #update_details(videos)
-                pass
+                update_details(videos)
+
             case "4":
-                print("fuck off dude")
-                #delete_video(videos)
-                pass
+                delete_video(videos)
+
             case "5":
                 break
+
             case _:
                 print("Invalid Choice | Try Again")
                 
